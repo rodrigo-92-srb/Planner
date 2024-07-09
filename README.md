@@ -1,4 +1,4 @@
-# Planner (NLW 16 Rocketseat Project)
+# Planner (NLW 16 Rocketseat Project) ✈🌎📆
 
 ### Technologies
 
