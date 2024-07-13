@@ -99,4 +99,12 @@ public class TripController {
 
     }
 
+    @GetMapping("/{id}/participants")
+    public ResponseEntity<List<Participant>> getAllParticipants(@PathVariable UUID id){
+        List<Participant> participantList = this.participantService.getAllParticipantsFromEvent(id);
+
+        return ResponseEntity.ok(participantList);
+    }
+
+
 }

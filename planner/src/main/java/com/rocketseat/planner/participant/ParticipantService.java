@@ -34,4 +34,8 @@ public class ParticipantService {
 
     }
 
+    public List<Participant> getAllParticipantsFromEvent(UUID tripId){
+        return this.repository.findByTripId(tripId);
+    }
+
 }
