@@ -1,9 +1,6 @@
 package com.rocketseat.planner.trip;
 
-import com.rocketseat.planner.participant.Participant;
-import com.rocketseat.planner.participant.ParticipantCreateResponse;
-import com.rocketseat.planner.participant.ParticipantRequestPayLoad;
-import com.rocketseat.planner.participant.ParticipantService;
+import com.rocketseat.planner.participant.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -98,5 +95,13 @@ public class TripController {
         return ResponseEntity.notFound().build();
 
     }
+
+    @GetMapping("/{id}/participants")
+    public ResponseEntity<List<ParticipantData>> getAllParticipants(@PathVariable UUID id){
+        List<ParticipantData> participantList = this.participantService.getAllParticipantsFromEvent(id);
+
+        return ResponseEntity.ok(participantList);
+    }
+
 
 }
